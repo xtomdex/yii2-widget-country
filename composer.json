@@ -1,0 +1,24 @@
+{
+    "name": "xtomdex/yii2-widget-country",
+    "description": "Rendering countries list with Select2 dropdown widget",
+    "type": "yii2-extension",
+    "keywords": ["yii2","widget","countries","select2","kartik"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Dmitrii Sharonov",
+            "email": "sharonovde@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0",
+        "xtomdex/country-flags": "*",
+        "lysenkobv/yii2-geoip": "~1.0",
+        "kartik-v/yii2-widget-select2": "@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "xtomdex\\widgets\\": ""
+        }
+    }
+}
