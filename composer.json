@@ -20,5 +20,7 @@
         "psr-4": {
             "xtomdex\\widgets\\": ""
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
