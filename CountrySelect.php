@@ -57,6 +57,23 @@ class CountrySelect extends Select2
     }
 
     /**
+     * Returns country name by its code.
+     *
+     * @param $code
+     * @return mixed
+     */
+    public static function getName($code)
+    {
+        $language = Yii::$app->language;
+        $fileName = __DIR__ . '/data/' . strtolower($language) . '.json';
+        if (!file_exists($fileName))
+            $fileName = __DIR__ . '/data/en.json';
+
+        $countries = json_decode(file_get_contents($fileName), 1);
+        return $countries[$code];
+    }
+
+    /**
      * Returns normalized array for dropdown mapped from country code to its name.
      *
      * @return array
