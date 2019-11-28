@@ -6,6 +6,7 @@ use Yii;
 use yii\helpers\ArrayHelper;
 use yii\web\JsExpression;
 use kartik\select2\Select2;
+use yii\web\View;
 use xtomdex\countryflags\CountryFlag;
 
 /**
@@ -90,10 +91,10 @@ class CountrySelect extends Select2
     protected function getRawData()
     {
         $language = $this->processLanguage();
-        $fileName = require __DIR__ . '/data/' . $language . '.json';
+        $fileName = __DIR__ . '/data/' . $language . '.json';
 
         if (!file_exists($fileName))
-            $fileName = require __DIR__ . '/data/en.json';
+            $fileName = __DIR__ . '/data/en.json';
 
         $file = file_get_contents($fileName);
 
@@ -166,7 +167,7 @@ function formatCountriesList(state) {
 }
 SCRIPT;
 
-        $this->view->registerJs($format, $this->view::POS_HEAD);
+        $this->view->registerJs($format, View::POS_HEAD);
     }
 
     /**
